@@ -1,5 +1,4 @@
 #set working directory
-setwd("UCI HAR Dataset")
 library(dplyr)
 
 ###Merges the training and the test sets to create one data set.
@@ -52,3 +51,6 @@ names(data)[3:68] <- gsub("-","_",names(data)[3:68])
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidydata <- group_by(data, subj_id, activity) %>%
     summarize_all(mean)
+
+#write table for assignment submission
+write.table(tidydata, file="tidydata_table.txt", row.names=F)

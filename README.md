@@ -2,11 +2,11 @@
 Course project for Getting and Cleaning Data
 
 ## Overview 
-This file contains a description of the steps I took to complete the Course Project for the Getting and Cleaning Data course taught by Johns Hopkins University on Coursera. For this project, I compiled accelerometer and gyroscope data from a UCI Machine Learning experiment into a tidy data file, following the principles outlined in Hadley Wickam's tidy data article. 
+This file contains a description of the steps I took to complete the Course Project for the Getting and Cleaning Data course taught by Johns Hopkins University on Coursera. For this project, I compiled accelerometer and gyroscope data from a UCI Machine Learning experiment into a tidy data file, following the principles outlined in Hadley Wickham's tidy data article. 
 
 The data can be accessed here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Hadley Wickman's article is available here: https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf
+Hadley Wickham's article is available here: https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf
 
 ## Methods
 In order to create a tidy data file, I followed the five basic steps outlined in the project assigment:
@@ -46,7 +46,7 @@ For this step, I wanted to create labels for the variables that could easily be 
 I accomplished these steps using the sub and gsub functions. 
 
 ### Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-Warwick defines tidy data as having the following characteristics: 
+Wickham defines tidy data as having the following characteristics: 
 1. Each variable forms a column.
 2. Each observation forms a row.
 3. Each type of observational unit forms a table

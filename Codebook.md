@@ -96,8 +96,8 @@ The remaining variables in the dataset are averaged for the two summary files. T
 - BodyGyroJerkMag
 
 Data Types
-Time - Time domain signals
-Freq - Frequency domain signals
-X - X-axis measurements
-Y - Y-axis measurements
-Z - Z-axis measurements
+- Time - Time domain signals
+- Freq - Frequency domain signals
+- X - X-axis measurements
+- Y - Y-axis measurements
+- Z - Z-axis measurements

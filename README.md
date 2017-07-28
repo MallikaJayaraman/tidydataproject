@@ -18,13 +18,13 @@ In order to create a tidy data file, I followed the five basic steps outlined in
 
 ### Step 1: Merge the training and test sets
 The first step in this portion of the analysis was to import all the relevant text files into R. These included: 
--features.txt: all the variable names in the dataset
--subject_test.txt: all the subjects in the test group
--subject_train.txt: all the subjects in the training group
--y_test.txt: the activities performed by subjects in the test group
--y_train.txt: the activities performed by subjects in the training group
--x_test.txt: accelerometer and gryoscope data collected for the test set
--y_test.txt accelerometer and gryoscope data collected for the training set
+- features.txt: all the variable names in the dataset
+- subject_test.txt: all the subjects in the test group
+- subject_train.txt: all the subjects in the training group
+- y_test.txt: the activities performed by subjects in the test group
+- y_train.txt: the activities performed by subjects in the training group
+- x_test.txt: accelerometer and gryoscope data collected for the test set
+- y_test.txt accelerometer and gryoscope data collected for the training set
 
 After importing these files, I merged the subject data into one table, using the rbind() command. I repeated this step for the activity and accelerometer/gyroscope data. Then, I attached specified the variable names table as the headers of the accelerometer/gyroscope data. Finally, I added columns specifying the subject ids (colname=subj_id) and the activities (colname=activity) to the accelerometer/gyroscope data using the cbind command(). For simplicity, I removed the intermediate data frames from RStudio and was left with my final data frame for Step 1, called data. 
 
@@ -38,10 +38,10 @@ To complete this step, I converted the activity column to a factor variable, and
 
 ### Step 4: Appropriately labels the data set with descriptive variable names.
 For this step, I wanted to create labels for the variables that could easily be cross-referenced in the code book, but were still short enough to type in RStudio. To accomplish this, I made 4 key changes: 
--Removing extraneous characters, such as parentheses
--Enhancing the descriptive nature of characters, such as "t" and "f"
--Capitalizing letters at the beginning of words for easier readibility
--Changing dashes to underscores so that labels will appear consistently in R
+- Removing extraneous characters, such as parentheses
+- Enhancing the descriptive nature of characters, such as "t" and "f"
+- Capitalizing letters at the beginning of words for easier readibility
+- Changing dashes to underscores so that labels will appear consistently in R
 
 I accomplished these steps using the sub and gsub functions. 
 
@@ -52,8 +52,8 @@ Warwick defines tidy data as having the following characteristics:
 3. Each type of observational unit forms a table
 
 Initially, in creating my tidy data set, I was concerned that the X, Y, and Z axis data collected for several variables should be stored in their own column as an axis variable. However, after some consideration, I concluded that this did not make sense for the following reasons: 
--not all variables have an X, Y, and Z axis measurement, and therefore this column would be unpopulated for a number of variables
--this would make the data more difficult to analyze, as the mean of movement in the X, Y, and Z directions should be calculated individually
+- not all variables have an X, Y, and Z axis measurement, and therefore this column would be unpopulated for a number of variables
+- this would make the data more difficult to analyze, as the mean of movement in the X, Y, and Z directions should be calculated individually
 - X, Y, and Z measurements are distinct variables and not a categorical descriptor of a subset of subjects (the way different treatment groups would be).
 
 To summarize by data, I used the group_by and summarize_all functions from the dplyr package. I grouped my dataset by the subject_id and activity variables and then calculated the mean of the remaining variables. This generated my final tidy data product. 

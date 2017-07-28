@@ -1,8 +1,6 @@
 #set working directory
 setwd("UCI HAR Dataset")
 library(dplyr)
-library(tidyr)
-
 
 ###Merges the training and the test sets to create one data set.
 #read in headers file

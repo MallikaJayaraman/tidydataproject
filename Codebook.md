@@ -73,7 +73,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 Source: features_info.txt from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ### Creating the tidy data file 
-Data file were merged in R using the rbind and cbind functions to create a single dataset, which included both test and training data. The data was then filtered to include only mean and standard deviation measurements, by applying the grep function. The subject id and data columns were also retained. Activity labels were applied to the activity columns using factor. Variable names were updated to remove redundant characters and improving the descritive nature and readibility of the variable names. Finally, the data were summarized by subject id and activity to calculate the average of all the variables in the dataset. 
+Data file were read into R using read.table merged in R using the rbind and cbind functions to create a single dataset, which included both test and training data. The data was then filtered to include only mean and standard deviation measurements, by applying the grep function. The subject id and data columns were also retained. Activity labels were applied to the activity columns using factor. Variable names were updated to remove redundant characters and improving the descritive nature and readibility of the variable names. Finally, the data were summarized by subject id and activity to calculate the average of all the variables in the dataset. The group_by and summarize_all functions from the dplyr packages were used.
 
 ### Final variable names
 The following are the variables by which the tidydata file is summarized

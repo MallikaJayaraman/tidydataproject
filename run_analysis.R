@@ -39,15 +39,17 @@ data$activity <- factor(data$activity,
 
 #Appropriately labels the data set with descriptive variable names.
 #variable names joined above
-#clarify variable names - do for columns from original dataset
+#remove extraneous characters
 names(data)[3:68]<- gsub("[()]","",names(data)[3:68])
+names(data)[63:68] <- sub("Body","",names(data)[63:68])
+#enhance decriptiveness of labels
 names(data)[3:42] <- sub("t","Time_",names(data)[3:42])
 names(data)[43:68] <- sub("f","Freq_",names(data)[43:68])
+#capitalize letters
 names(data)[3:68] <- sub("mean","Mean",names(data)[3:68])
 names(data)[3:68] <- sub("std","Std",names(data)[3:68])
+#use underscores instead of dashes
 names(data)[3:68] <- gsub("-","_",names(data)[3:68])
-names(data)[63:68] <- sub("Body","",names(data)[63:68])
-clean_names <- names(data)
 
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidydata <- group_by(data, subj_id, activity) %>%
